@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'workout.dart';
 
 // class WorkoutContainer extends Container (const title; const exerciseQuantity) {
 //   @Override
@@ -53,19 +54,33 @@ class MyApp extends StatelessWidget {
             width: double.infinity,
             height: 80,
             margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(12),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               color: Colors.black26,
             ),
-            child: const Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Superiores"),
-                  Text("7 Exercicios"),
-                ],
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "Superiores",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    ),
+                    Text("7 Exercicios"),
+                  ],
+                ),
+                ElevatedButton(
+                  child: const Icon(Icons.open_in_full),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const WorkoutPage()));
+                  },
+                )
+              ],
             ),
           ),
         ],
