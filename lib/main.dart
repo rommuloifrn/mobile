@@ -1,21 +1,5 @@
 import 'package:flutter/material.dart';
-import 'workout.dart';
-
-// class WorkoutContainer extends Container (const title; const exerciseQuantity) {
-//   @Override
-//   width: double.infinity,
-//   height: 80,
-//   margin: const EdgeInsets.all(20),
-//   decoration: const BoxDecoration(
-//     borderRadius: BorderRadius.all(Radius.circular(15)),
-//     color: Colors.black26,
-//   ),
-//   child: const Column(
-//     children: [
-//       Text("Superiores"),
-//     ],
-//   ),
-// }
+//import 'workout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,39 +34,9 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: 80,
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.all(12),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Colors.black26,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      "Superiores",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-                    ),
-                    Text("7 Exercicios"),
-                  ],
-                ),
-                ElevatedButton(
-                  child: const Icon(Icons.open_in_full),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const WorkoutPage()));
-                  },
-                )
-              ],
-            ),
-          ),
+          const ItemPanel(),
+          const ItemPanel(),
+          const ItemPanel(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -97,5 +51,42 @@ class MyApp extends StatelessWidget {
       //   color: Colors.amber,
       // ),
     ));
+  }
+}
+
+class ItemPanel extends StatelessWidget {
+  const ItemPanel({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 80,
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(12),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: Colors.black26,
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "superiores",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+              Text("7 Exercicios"),
+            ],
+          ),
+          
+        ],
+      ),
+    );
   }
 }
