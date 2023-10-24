@@ -10,8 +10,23 @@ class WorkoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.limeAccent)),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Treino")),
+        appBar: AppBar(
+          backgroundColor: Colors.black38,
+          title: const Text("Treino"),
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black54,
+            ),
+          ),
+        ),
       ),
     );
   }
