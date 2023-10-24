@@ -11,7 +11,7 @@ class WorkoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("Exercício")),
+        appBar: AppBar(title: const Text("Treino")),
       ),
     );
   }
